@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Source Code Pro', monospace;
+  background: #333;
+  color: #fff;
+  line-height: 1.6;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+
+  //below is top nav-bar
+  //width: 100%;
+  //height: 60px;
+
+  //below is side nav-bar
+  height: 100%;
+  width: 120px;
+  background: rgba(0, 0, 0, 0.801);
+
+  ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: center;
+    //below is neccesary for side nav-bar
+    align-items: center;
+    flex-direction: column; //change to row for top-nav
+
+    li {
+      margin: 0 1rem;
+      padding: 1rem;
+
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #f4f4f4;
+        transition: 0.5s;
+        font-size: 1rem;
+      }
+
+      a:hover {
+        color: #56c9e6;
+        font-size: 1.1rem;
+        transition: 0.2s;
+      }
+
+      a:active {
+        color: #56c9e6;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: center;
+
+  h1 {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 3rem;
+  }
+
+  p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+  }
+}
+
+#home {
+  background-color: darkslategrey;
+}
+
+#about {
+  background-color: darkolivegreen;
+}
+
+#portfolio {
+  background-color: rgb(126, 5, 5);
+}
+
+#contact {
+  background-color: darkslateblue;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .navbar {
+    width: 100%;
+    height: 60px;
+
+    ul {
+      flex-direction: row;
+      justify-content: center;
+
+      li {
+        margin: 0 0.5rem;
+        padding: 0.2rem;
+        a {
+          font-size: 1rem;
+        }
+
+        a:hover {
+          font-size: 1.1rem;
+        }
+
+        a:active {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  section{
+    height: 100%;
+  }
+}
